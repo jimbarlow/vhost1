@@ -1,0 +1,8 @@
+[ovirt-4.0]
+name=Latest oVirt 4.0 Release
+#baseurl=http://resources.ovirt.org/pub/ovirt-4.0/rpm/el$releasever/
+mirrorlist=http://resources.ovirt.org/pub/yum-repo/mirrorlist-ovirt-4.0-el$releasever
+enabled=1
+skip_if_unavailable=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-ovirt-4.0

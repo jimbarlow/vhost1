@@ -1,0 +1,28 @@
+The following network ports should be opened:
+              tcp:5900
+              tcp:5901
+              tcp:9090
+              udp:5900
+              udp:5901
+          An example of the required configuration for iptables can be found at:
+              /etc/ovirt-hosted-engine/iptables.example
+          In order to configure firewalld, copy the files from
+          /etc/ovirt-hosted-engine/firewalld to /etc/firewalld/services
+          and execute the following commands:
+              firewall-cmd -service hosted-cockpit
+              firewall-cmd -service hosted-console
+[ INFO  ] Creating VM
+          You can now connect to the VM with the following command:
+                hosted-engine --console
+          You can also graphically connect to the VM from your system with the following command:
+                remote-viewer vnc://vhost1.barlows.local:5900
+          Use temporary password "1672PNuf" to connect to vnc console.
+          Please ensure that your Guest OS is properly configured to support serial console according to your distro documentation.
+          Follow http://www.ovirt.org/Serial_Console_Setup#I_need_to_access_the_console_the_old_way for more info.
+          If you need to reboot the VM you will need to start it manually using the command:
+          hosted-engine --vm-start
+          You can then set a temporary password using the command:
+          hosted-engine --add-console-password
+          Please install and setup the engine in the VM.
+          You may also be interested in installing ovirt-guest-agent-common package in the VM.
+

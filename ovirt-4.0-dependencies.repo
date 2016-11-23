@@ -1,0 +1,39 @@
+[ovirt-4.0-epel]
+name=Extra Packages for Enterprise Linux 7 - $basearch
+#baseurl=http://download.fedoraproject.org/pub/epel/7/$basearch
+mirrorlist=https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+failovermethod=priority
+enabled=1
+includepkgs=epel-release,python-uinput,puppet,python-lockfile,python-cpopen,python-ordereddict,python-pthreading,python-inotify,python-argparse,novnc,python-ply,python-kitchen,python-daemon,python-websockify,livecd-tools,spice-html5,mom,python-IPy,python-ioprocess,ioprocess,safelease,python-paramiko,python2-paramiko,python2-crypto,libtomcrypt,libtommath,python-cheetah,python-ecdsa,python2-ecdsa,python-markdown,rubygem-rgen,ovirt-guest-agent*,userspace-rcu,protobuf-java,objenesis,python34*
+gpgcheck=1
+gpgkey=https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-7
+
+[ovirt-4.0-centos-gluster37]
+name=CentOS-7 - Gluster 3.7
+baseurl=http://mirror.centos.org/centos/7/storage/$basearch/gluster-3.7/
+gpgcheck=1
+skip_if_unavailable=1
+enabled=1
+gpgkey=https://raw.githubusercontent.com/CentOS-Storage-SIG/centos-release-storage-common/master/RPM-GPG-KEY-CentOS-SIG-Storage
+
+[ovirt-4.0-patternfly1-noarch-epel]
+name=Copr repo for patternfly1 owned by patternfly
+baseurl=http://copr-be.cloud.fedoraproject.org/results/patternfly/patternfly1/epel-7-$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgcheck=0
+
+[virtio-win-stable]
+name=virtio-win builds roughly matching what was shipped in latest RHEL
+baseurl=http://fedorapeople.org/groups/virt/virtio-win/repo/stable
+enabled=1
+skip_if_unavailable=1
+gpgcheck=0
+
+[centos-ovirt40-release]
+name=CentOS-7 - oVirt 4.0
+baseurl=http://cbs.centos.org/repos/virt7-ovirt-40-release/x86_64/os/
+gpgcheck=1
+skip_if_unavailable=1
+enabled=0
+
