@@ -65,7 +65,7 @@ do
 done    
 for i in vhost1 vhost2 vhost3
 do
-   ssh root@$i "rm -rf /etc/systemd/system/gluster*"
+   ssh root@$i "rm -rf /etc/systemd/system/gluster* " ; ssh root@$i "rm -rf /etc/pki/ovirt*"
 done    
 # remove the rest of the vdsm software in /dev/mapper
 for i in vhost1 vhost2 vhost3
@@ -106,10 +106,11 @@ done
 
 for i in vhost3 vhost2 vhost2
 do 
-    ssh root@$i "rm -rf /log/vdsm* ; rm -rf /log/gluster*"
+    ssh root@$i "rm -rf /var/log/vdsm* ; rm -rf /log/gluster* ; rm -rf /etc/pki/ovirt* ; rm -rf /usr/share/ovirt* ; rm -rf /usr/share/otopi/plugins/ovirt* ; rm -rf /var/lib/ovirt* ; rm -rf /usr/sbin/ovirt*  "
 done
 
-for i in vhost3 vhost2 vhost2
+for i in vhost1 vhost2 vhost2
 do 
-    ssh root@$i "rm -rf /etc/pki/vdsm* ; rm -rf /etc/pki/libvirt*"
+    ssh root@$i "rm -rf /etc/pki/vdsm* ; rm -rf /etc/pki/libvirt*; rm -rf /rhev*; rm -rf /etc/pki/vdsm* ; rm -rf /usr/share/vdsm rm -rf /usr/share/ovirt*"
+
 done
